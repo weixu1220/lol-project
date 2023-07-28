@@ -1,24 +1,8 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useChampsContext } from '../ChampsContext';
 
 function Champions() {
-    const [champs,setChamps] = useState({})
-    async function getChamps() {
-        let api = `https://ddragon.leagueoflegends.com/cdn/13.14.1/data/en_US/champion.json`
-        try{
-            const response = await fetch(api)
-        const result = await response.json()
-        const data = await result.data
-        setChamps(data)
-        }catch(error){
-            console.error(error)
-        }
-        
-    }
-
-    useEffect(() => {
-        getChamps()
-    }, [])
+    const { champs} = useChampsContext();
     function loaded (){
         const names = Object.keys(champs)
         const displayItems = []
@@ -27,15 +11,10 @@ function Champions() {
             e.target.src = placeholderUrl
           }
         for (let item of names){
-            console.log("name",champs[item]['name'])
             let champName = champs[item]['name']
-            console.log("image",champs[item]['image']['full'])
-                let imgUrl = `https://ddragon.leagueoflegends.com/cdn/13.14.1/img/champion/${champs[item]['image']['full']}`
-            console.log(imgUrl)
-
-            
+            let imgUrl = `https://ddragon.leagueoflegends.com/cdn/13.14.1/img/champion/${champs[item]['image']['full']}`
             displayItems.push(
-            <Link className='champions' key={champName} to={`./champion/${champName}`}>
+            <Link className='champions' key={champName} to={`./${champName}`}>
                 <img src={imgUrl? imgUrl : placeholderUrl} alt={champName} onError={onImageError}/>
                 <p>{champName}</p>
             </Link>
@@ -55,7 +34,7 @@ function Champions() {
     }
 
     return (
-        champs===[] ? loading() : loaded()
+        !champs ? loading() : loaded()
     );
 }
 

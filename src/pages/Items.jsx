@@ -1,26 +1,9 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import { useChampsContext } from "../ChampsContext";
 
-function Items() {
-    const [items,setItems] = useState({})
-    async function getItems() {
-        let api = `https://ddragon.leagueoflegends.com/cdn/13.14.1/data/en_US/item.json`
-        try{
-            const response = await fetch(api)
-        const result = await response.json()
-        const data = await result.data
-        console.log(data)
-        setItems(data)
-        }catch(error){
-            console.error(error)
-        }
-        
-    }
-
-    useEffect(() => {
-        getItems()
-    }, [])
-    console.log(items)
+function Items() { 
+    const { items} = useChampsContext();
     function loaded (){
         const itemIDs = Object.keys(items)
         const displayItems = []
@@ -28,17 +11,12 @@ function Items() {
         const onImageError = (e) => {
             e.target.src = placeholderUrl
           }
-        console.log(itemIDs)
-        for (let itemID of itemIDs){
-            console.log("name",items[itemID]['name'])
-            let itemName = items[itemID]['name']
-            console.log("image",items[itemID]['image']['full'])
-                let imgUrl = `https://ddragon.leagueoflegends.com/cdn/13.14.1/img/item/${items[itemID]['image']['full']}`
-                console.log(imgUrl)
-            
-            displayItems.push(
 
-            <Link className='items' key={itemID} to={`./item/${itemID}`}>
+        for (let itemID of itemIDs){
+            let itemName = items[itemID]['name']
+            let imgUrl = `https://ddragon.leagueoflegends.com/cdn/13.14.1/img/item/${items[itemID]['image']['full']}`
+            displayItems.push(
+             <Link className='items' key={itemID} to={`./${itemID}`}>
                 <img src={imgUrl? imgUrl : placeholderUrl} alt={itemName} onError={onImageError}/>
                 <p>{itemName}</p>
             </Link>
@@ -58,7 +36,7 @@ function Items() {
     }
 
     return (
-        items===[] ? loading() : loaded()
+        !items ? loading() : loaded()
     );
 }
 

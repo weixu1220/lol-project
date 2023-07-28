@@ -11,6 +11,9 @@ function Nav() {
             <Link to="/items">
                 <div>Items</div>
             </Link>
+            <Link to="/mychamps">
+                <div>My Champions</div>
+            </Link>
         </div>
     );
 }

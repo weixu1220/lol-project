@@ -5,13 +5,14 @@ import Champions from './pages/Champions'
 import Items from './pages/Items'
 import Item from './pages/Item'
 import Champ from './pages/Champ'
+import MyChamps from './pages/MyChamps'
 import './App.css'
 
 function App() {
   return (
     <div className="App">
       <div className="header-box">
-        <img src="./images/logo.jpg" alt="Logo R"/>
+        <img src="https://github.com/weixu1220/lol-project/blob/main/src/images/logo.jpg?raw=true"  style={{width: "100px"}} alt="Logo R"/>
         <h1>Rift Archive</h1>
       </div>
       
@@ -19,9 +20,10 @@ function App() {
       <Routes>
         <Route path='/' element = {<Home />}/>
         <Route path='/champions' element = {<Champions />}/>
-        <Route path='/champion/:champName' element = {<Champ />}/>
+        <Route path='/champions/:champName' element = {<Champ />}/>
         <Route path='/items/' element = {<Items />}/>
-        <Route path='/item/:itemID' element = {<Item />}/>
+        <Route path='/items/:itemID' element = {<Item />}/>
+        <Route path='/mychamps' element={<MyChamps />} />
       </Routes>
     </div>
   )
