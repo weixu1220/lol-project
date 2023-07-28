@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Champions() {
     const [champs,setChamps] = useState({})
     async function getChamps() {
-        let api = `https://ddragon.leagueoflegends.com/cdn/13.13.1/data/en_US/champion.json`
+        let api = `https://ddragon.leagueoflegends.com/cdn/13.14.1/data/en_US/champion.json`
         try{
             const response = await fetch(api)
         const result = await response.json()
@@ -21,7 +22,7 @@ function Champions() {
     function loaded (){
         const names = Object.keys(champs)
         const displayItems = []
-        let placeholderUrl = "https://ddragon.leagueoflegends.com/cdn/12.4.1/img/champion/Aatrox.png"
+        let placeholderUrl = "https://ddragon.leagueoflegends.com/cdn/13.14.1/img/champion/Aatrox.png"
         const onImageError = (e) => {
             e.target.src = placeholderUrl
           }
@@ -29,19 +30,19 @@ function Champions() {
             console.log("name",champs[item]['name'])
             let champName = champs[item]['name']
             console.log("image",champs[item]['image']['full'])
-                let imgUrl = `https://ddragon.leagueoflegends.com/cdn/12.4.1/img/champion/${champs[item]['image']['full']}`
+                let imgUrl = `https://ddragon.leagueoflegends.com/cdn/13.14.1/img/champion/${champs[item]['image']['full']}`
             console.log(imgUrl)
 
             
             displayItems.push(
-            <div className='champions' key={champName}>
+            <Link className='champions' key={champName} to={`./champion/${champName}`}>
                 <img src={imgUrl? imgUrl : placeholderUrl} alt={champName} onError={onImageError}/>
                 <p>{champName}</p>
-            </div>
+            </Link>
             )
         }
         return(
-            <div className="champions">
+            <div className="champions-box">
                 {displayItems}
             </div>
         )
