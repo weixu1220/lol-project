@@ -11,12 +11,11 @@ import './App.css'
 function App() {
   return (
     <div className="App">
-      <div className="header-box">
+      <div className="container">
         <img src="https://github.com/weixu1220/lol-project/blob/main/src/images/logo.jpg?raw=true"  style={{width: "100px"}} alt="Logo R"/>
         <h1>Rift Archive</h1>
+        <Nav />
       </div>
-      
-      <Nav />
       <Routes>
         <Route path='/' element = {<Home />}/>
         <Route path='/champions' element = {<Champions />}/>
