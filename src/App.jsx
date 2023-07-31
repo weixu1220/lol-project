@@ -10,11 +10,11 @@ import './App.css'
 
 function App() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-      <div className="flex flex-col">
-        <div className="flex flex-row">
+    <div className="">
+      <div className="">
+        <div className="">
           <img src="https://github.com/weixu1220/lol-project/blob/main/src/images/logo.jpg?raw=true"  style={{width: "100px"}} alt="Logo R"/>
-          <h1 className="text-3xl font-bold">Rift Archive</h1>
+          <h1 className="text-3xl font-bold text-red-500 underline text-center">Rift Archive</h1>
         </div>
         <Nav />
       </div>
