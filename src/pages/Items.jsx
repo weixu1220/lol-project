@@ -4,6 +4,7 @@ import { useChampsContext } from "../ChampsContext";
 
 function Items() { 
     const { items} = useChampsContext();
+    
     function loaded (){
         const itemIDs = Object.keys(items)
         const displayItems = []
@@ -11,15 +12,23 @@ function Items() {
         const onImageError = (e) => {
             e.target.src = placeholderUrl
           }
-
+            // Function to extract the text between two tags
+        const extractTextBetweenTags = (text, tag) => {
+            const startTag = `<${tag}>`;
+            const endTag = `</${tag}>`;
+            const startIndex = text.indexOf(startTag) + startTag.length;
+            const endIndex = text.indexOf(endTag);
+            return text.substring(startIndex, endIndex);
+        };
+          
         for (let itemID of itemIDs){
             let itemName = items[itemID]['name']
             let imgUrl = `https://ddragon.leagueoflegends.com/cdn/13.14.1/img/item/${items[itemID]['image']['full']}`
             displayItems.push(
-            <div className="flex justify-center w-40 h-50 p-1 border-2 ">
-             <Link className='flex-col m-1 p-1' key={itemID} to={`./${itemID}`}>
-                <img className="w-22 h-22 p-1 m-1" src={imgUrl? imgUrl : placeholderUrl} alt={itemName} onError={onImageError}/>
-                <p className=" w-20 text-center p-1">{itemName}</p>
+            <div className="w-40 h-56  border-2 p-2 m-5 rounded-xl hover:shadow-2xl" key={itemID}>
+             <Link className=' flex flex-col justify-center items-center mx-auto p-1'  to={`./${itemID}`}>
+                <img className= "p-1 m-1 image" src={imgUrl? imgUrl : placeholderUrl} alt={itemName} onError={onImageError}/>
+                <p className=" w-20 text-center p-1">{itemName.includes("<")?extractTextBetweenTags(itemName,"rarityLegendary"):itemName}</p>
             </Link>
             </div>
             )

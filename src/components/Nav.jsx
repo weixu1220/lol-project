@@ -1,8 +1,7 @@
 import {Link} from 'react-router-dom'
 function Nav() {
     return (
-        <nav className='sticky top-0'>
-        <div className="flex flex-row flex-wrap justify-center font-bold m-1 p-1">
+        <div className="flex flex-row flex-wrap justify-center font-bold p-1">
             <Link className="p-5 " to="/">
                 <h1 className='hover:font-serif'>Home</h1>
             </Link>
@@ -16,7 +15,6 @@ function Nav() {
                 <h1 className='hover:font-serif'>My Champions</h1>
             </Link>
         </div>
-        </nav>
     );
 }
 

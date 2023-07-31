@@ -6,3 +6,7 @@ export const store = configureStore({
     champs: ChampsReducer,
   },
 })
+store.subscribe(() => {
+  const state = store.getState();
+  localStorage.setItem('myChampsState', JSON.stringify(state.myChamps));
+});
