@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 function MyChamps() {
     const myChamps = useSelector(state => state.champs?.myChamps)
-    console.log(myChamps)
     const navigate = useNavigate()
     const displayItems = []
     let placeholderUrl = "https://ddragon.leagueoflegends.com/cdn/13.14.1/img/champion/Aatrox.png"

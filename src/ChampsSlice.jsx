@@ -4,7 +4,6 @@ import { createSlice } from '@reduxjs/toolkit'
 const getInitialState = () => {
   // Check if data exists in localStorage
   const storedState = localStorage.getItem('champsState');
-  console.log(storedState)
   if (storedState) {
     return JSON.parse(storedState);
   } else {
@@ -27,10 +26,8 @@ export const ChampsSlice = createSlice({
         imgUrl,
       };
       state.myChamps.push(newChamp);
-      console.log(state.myChamps)
       // Update localStorage with the new state
       let myChampsState = JSON.stringify({ myChamps: state.myChamps })
-      console.log(myChampsState)
       localStorage.setItem('champsState', myChampsState);
     }
   },

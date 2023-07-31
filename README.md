@@ -1,11 +1,43 @@
-# React + Vite
+# Rift Archive - A League of Legends Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Responsive CSS
 
-Currently, two official plugins are available:
+This project is built with TailwindCSS, ensuring a responsive design that adapts to various screen sizes and devices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# lol-project
+## Navigation
 
-<a href="https://www.freepik.com/free-vector/letter-logo-design-gradient-colorful-illustration_31530040.htm#query=R%20A%20logo&position=1&from_view=search&track=ais">Image by AndreaCharlesta</a> on Freepik
+The application features a sticky navbar that remains fixed at the top of every page. It provides easy access to four main sections: Home, Champions, Items, and My Champions.
+
+## Home Page
+
+The home page includes a user-friendly form that requests the user's name. The provided name is stored in the local storage, and if it already exists, a personalized greeting is displayed.
+
+## Champions and Items Pages
+
+### Fetching Data from APIs
+
+Data for champions and items are fetched separately from the Data Dragon API. The retrieved data is then stored and passed to components using useContext to be displayed on the champions and items pages.
+
+### Interesting Challenge
+
+The data set contains some information stored with tags. To ensure data cleanliness and readability, I developed a small tag remover utility to eliminate specific tags and present the information in a more organized manner.
+
+### Future Enhancements
+
+In the future, I have exciting plans to enhance the Rift Archive project further:
+
+- **Expanded Data Analysis**: I aim to explore more data related to item effects and create an item list that showcases the combined effects. This will enable the application to display a full champion build, including the effects of selected items.
+- **Interactive Item Selection**: I plan to implement drag-and-drop functionality, allowing users to drag items into slots, making the item selection process more engaging and user-friendly.
+- **Improved Search and Filtering**: I intend to add search bars for champions and items to facilitate quick and efficient exploration. Additionally, I plan to introduce filters to sort champions and items based on various statistics.
+
+## Linking with Parameters
+
+Clicking on a champion or item will navigate users to a new page, providing more detailed information about the selected champion or item.
+
+## My Champions
+
+The "My Champions" feature enables users to add their favorite champions, which are then stored locally. The selected champions will be displayed for easy reference.
+
+## Copyright
+
+Data is collected from the [Data Dragon API](https://riot-api-libraries.readthedocs.io/en/latest/ddragon.html). All images and data belong to Riot Games, and full copyrights are acknowledged.

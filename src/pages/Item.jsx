@@ -17,11 +17,11 @@ function Item() {
             return (<></>)
         }
     return (
-        <div className="w-11/12 flex ">
-            <h1>{currentItem.name}</h1>
-            <p>Cost: {currentItem.gold?.base}</p>
-            <p>Resell: {currentItem.gold?.sell}</p>
-            <p>Description: {currentItem.plaintext}</p>
+        <div className="w-8/12 mx-auto text-xl p-1 m-1">
+            <h1 className="text-center text-3xl">{currentItem.name}</h1>
+            <p className="border-2 p-2">Cost: {currentItem.gold?.base}</p>
+            <p className="border-2 p-2">Resell: {currentItem.gold?.sell}</p>
+            <p className="border-2 p-2">Description: {currentItem.plaintext}</p>
         </div>
     );
 }
