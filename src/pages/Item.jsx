@@ -17,7 +17,7 @@ function Item() {
             return (<></>)
         }
     return (
-        <div className="item">
+        <div className="w-11/12 flex ">
             <h1>{currentItem.name}</h1>
             <p>Cost: {currentItem.gold?.base}</p>
             <p>Resell: {currentItem.gold?.sell}</p>

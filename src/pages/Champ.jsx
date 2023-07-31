@@ -17,37 +17,37 @@ function Champ() {
             return (<></>)
         }
     return (
-        <div className="champ">
-            <h1>{currentChamp.name}</h1>
-            <h2>Title: {currentChamp.title}</h2>
-            <p>Version: {currentChamp.version}</p>
-            <p>Lore: {currentChamp.blurb}</p>
-            <p>Resource: {currentChamp.partype}</p>
+        <div className="w-8/12 mx-auto text-xl p-1 m-1">
+            <h1 className="text-center text-3xl">{currentChamp.name}</h1>
+            <h2 className="border-2 p-2">Title: {currentChamp.title}</h2>
+            <p className="border-2 p-2">Version: {currentChamp.version}</p>
+            <p className="border-2 p-2">Lore: {currentChamp.blurb}</p>
+            <p className="border-2 p-2">Resource: {currentChamp.partype}</p>
             <div className="info">
-                <p>Attack: {currentChamp.info?.attack}</p>
-                <p>Defense: {currentChamp.info?.defense}</p>
-                <p>Magic: {currentChamp.info?.magic}</p>
-                <p>Difficulty: {currentChamp.info?.difficulty}</p>
+                <p className="border-2 p-2">Attack: {currentChamp.info?.attack}</p>
+                <p className="border-2 p-2">Defense: {currentChamp.info?.defense}</p>
+                <p className="border-2 p-2">Magic: {currentChamp.info?.magic}</p>
+                <p className="border-2 p-2">Difficulty: {currentChamp.info?.difficulty}</p>
             </div>
             <div className="stats">
-                <p>HP: {currentChamp.stats?.hp}</p>
-                <p>HP per level: {currentChamp.stats?.hpperlevel}</p>
-                <p>HP regen: {currentChamp.stats?.hpregen}</p>
-                <p>HP regen per level: {currentChamp.stats?.hpregenperlevel}</p>
-                <p>MP: {currentChamp.stats?.mp}</p>
-                <p>MP per level: {currentChamp.stats?.mpperlevel}</p>
-                <p>MP regen: {currentChamp.stats?.mpregen}</p>
-                <p>mP regen per level: {currentChamp.stats?.mpregenperlevel}</p>
-                <p>Armor: {currentChamp.stats?.armor}</p>
-                <p>Armor per level: {currentChamp.stats?.armorperlevel}</p>
-                <p>Attack range: {currentChamp.stats?.attackrange}</p>
-                <p>Attack speed: {currentChamp.stats?.attackspeed}</p>
-                <p>Attack speed per level: {currentChamp.stats?.attackspeedperlevel}</p>
-                <p>Crit: {currentChamp.stats?.crit}</p>
-                <p>Crit per level: {currentChamp.stats?.critperlevel}</p>
-                <p>Movement speed: {currentChamp.stats?.movespeed}</p>
-                <p>Magic resist: {currentChamp.stats?.spellblock}</p>
-                <p>Magic resist per level: {currentChamp.stats?.spellblockperlevel}</p>
+                <p className="border-2 p-2">HP: {currentChamp.stats?.hp}</p>
+                <p className="border-2 p-2">HP per level: {currentChamp.stats?.hpperlevel}</p>
+                <p className="border-2 p-2">HP regen: {currentChamp.stats?.hpregen}</p>
+                <p className="border-2 p-2">HP regen per level: {currentChamp.stats?.hpregenperlevel}</p>
+                <p className="border-2 p-2">MP: {currentChamp.stats?.mp}</p>
+                <p className="border-2 p-2">MP per level: {currentChamp.stats?.mpperlevel}</p>
+                <p className="border-2 p-2">MP regen: {currentChamp.stats?.mpregen}</p>
+                <p className="border-2 p-2">mP regen per level: {currentChamp.stats?.mpregenperlevel}</p>
+                <p className="border-2 p-2">Armor: {currentChamp.stats?.armor}</p>
+                <p className="border-2 p-2">Armor per level: {currentChamp.stats?.armorperlevel}</p>
+                <p className="border-2 p-2">Attack range: {currentChamp.stats?.attackrange}</p>
+                <p className="border-2 p-2">Attack speed: {currentChamp.stats?.attackspeed}</p>
+                <p className="border-2 p-2">Attack speed per level: {currentChamp.stats?.attackspeedperlevel}</p>
+                <p className="border-2 p-2">Crit: {currentChamp.stats?.crit}</p>
+                <p className="border-2 p-2">Crit per level: {currentChamp.stats?.critperlevel}</p>
+                <p className="border-2 p-2">Movement speed: {currentChamp.stats?.movespeed}</p>
+                <p className="border-2 p-2">Magic resist: {currentChamp.stats?.spellblock}</p>
+                <p className="border-2 p-2">Magic resist per level: {currentChamp.stats?.spellblockperlevel}</p>
             </div>
         </div>
     );

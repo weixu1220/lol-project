@@ -1,4 +1,4 @@
-import {Routes, Route} from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import Home from './pages/Home'
 import Champions from './pages/Champions'
@@ -10,22 +10,25 @@ import './App.css'
 
 function App() {
   return (
-    <div className="">
-      <div className="">
-        <div className="">
-          <img src="https://github.com/weixu1220/lol-project/blob/main/src/images/logo.jpg?raw=true"  style={{width: "100px"}} alt="Logo R"/>
-          <h1 className="text-3xl font-bold text-red-500 underline text-center">Rift Archive</h1>
-        </div>
+    <div className="w-full min-h-screen flex-col justify-center items-center">
+      
+        <div className="w-full flex">
+          <h1 className="w-full bg-blue-950 text-5xl font-sans text-center font-extrabold text-amber-400 m-0 p-5">Rift Archive</h1>
+        </div >
+        <div className="w-full text-blue-950 text-lg">
         <Nav />
-      </div>
+        </div>
+        
+      <div className="w-full flex-col">
       <Routes>
-        <Route path='/' element = {<Home />}/>
-        <Route path='/champions' element = {<Champions />}/>
-        <Route path='/champions/:champName' element = {<Champ />}/>
-        <Route path='/items/' element = {<Items />}/>
-        <Route path='/items/:itemID' element = {<Item />}/>
+        <Route path='/' element={<Home />} />
+        <Route path='/champions' element={<Champions />} />
+        <Route path='/champions/:champName' element={<Champ />} />
+        <Route path='/items/' element={<Items />} />
+        <Route path='/items/:itemID' element={<Item />} />
         <Route path='/mychamps' element={<MyChamps />} />
       </Routes>
+      </div>
     </div>
   )
 }

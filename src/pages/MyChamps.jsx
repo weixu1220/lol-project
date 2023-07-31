@@ -15,24 +15,19 @@ function MyChamps() {
         let imgUrl = item["imgUrl"]
         
         displayItems.push(
-            <div className="champ-box" key={champName}>
-                <div  onClick={()=>navigate(`/champions/${champName}`)}className='champions'>
-                    <img src={imgUrl? imgUrl : placeholderUrl} alt={champName} onError={onImageError}/>
-                    <p>{champName}</p>
+            <div className="flex-col w-48 h-64 justify-center border-2 p-5" key={champName}>
+                <div className="flex-col justify-center" onClick={()=>navigate(`/champions/${champName}`)}className='champions'>
+                    <img className="w-32 h-32 p-1" src={imgUrl? imgUrl : placeholderUrl} alt={champName} onError={onImageError}/>
+                    <p className="text-2xl text-center">{champName}</p>
                 </div>
             </div>
         )
     }
     return(
-        <div className="champions-box">
+        <div className="w-11/12 flex flex-wrap justify-center my-5 mx-auto p-1">
             {displayItems}
         </div>
     )
-    return (
-        <div className="mychamps">
-            mychamps
-        </div>
-    );
 }
 
 export default MyChamps;

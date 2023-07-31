@@ -16,14 +16,16 @@ function Items() {
             let itemName = items[itemID]['name']
             let imgUrl = `https://ddragon.leagueoflegends.com/cdn/13.14.1/img/item/${items[itemID]['image']['full']}`
             displayItems.push(
-             <Link className='items' key={itemID} to={`./${itemID}`}>
-                <img src={imgUrl? imgUrl : placeholderUrl} alt={itemName} onError={onImageError}/>
-                <p>{itemName}</p>
+            <div className="flex justify-center w-40 h-50 p-1 border-2 ">
+             <Link className='flex-col m-1 p-1' key={itemID} to={`./${itemID}`}>
+                <img className="w-22 h-22 p-1 m-1" src={imgUrl? imgUrl : placeholderUrl} alt={itemName} onError={onImageError}/>
+                <p className=" w-20 text-center p-1">{itemName}</p>
             </Link>
+            </div>
             )
          }
         return(
-            <div className="items-box">
+            <div className="w-11/12 flex flex-wrap justify-center mx-auto my-5 p-1 ">
                 {displayItems}
             </div>
         )

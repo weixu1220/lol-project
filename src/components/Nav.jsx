@@ -1,18 +1,18 @@
 import {Link} from 'react-router-dom'
 function Nav() {
     return (
-        <div className="container">
-            <Link to="/">
-                <div>Home</div>
+        <div className="flex flex-row flex-wrap justify-center font-bold m-1 p-1">
+            <Link className="p-5 " to="/">
+                <h1 className='hover:font-serif'>Home</h1>
             </Link>
-            <Link to="/champions">
-                <div>Champions</div>
+            <Link className="p-5 " to="/champions">
+                <h1 className='hover:font-serif'>Champions</h1>
             </Link>
-            <Link to="/items">
-                <div>Items</div>
+            <Link className="p-5 " to="/items">
+                <h1 className='hover:font-serif'>Items</h1>
             </Link>
-            <Link to="/mychamps">
-                <div>My Champions</div>
+            <Link className="p-5 " to="/mychamps">
+                <h1 className='hover:font-serif'>My Champions</h1>
             </Link>
         </div>
     );
