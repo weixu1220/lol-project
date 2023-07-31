@@ -10,16 +10,16 @@ import './App.css'
 
 function App() {
   return (
-    <div className="w-full min-h-screen flex-col justify-center items-center">
-      
-        <div className="w-full flex">
+    <div className="w-full min-h-screen">
+      <div className="sticky top-0">
+        <div className="w-full ">
           <h1 className="w-full bg-blue-950 text-5xl font-sans text-center font-extrabold text-amber-400 m-0 p-5">Rift Archive</h1>
         </div >
-        <div className="w-full text-blue-950 text-lg">
-        <Nav />
+        <div className="w-full mx-auto text-blue-950 text-lg m-0 bg-white">
+          <Nav />
         </div>
-        
-      <div className="w-full flex-col">
+      </div>
+      <div className="w-full">
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/champions' element={<Champions />} />
