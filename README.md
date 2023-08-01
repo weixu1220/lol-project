@@ -1,5 +1,7 @@
 # Rift Archive - A League of Legends Project
+This project is deployed with Netlify.
 
+https://astounding-starlight-b3e2f5.netlify.app/
 ## Responsive CSS
 
 This project is built with TailwindCSS, ensuring a responsive design that adapts to various screen sizes and devices.
@@ -9,12 +11,16 @@ This project is built with TailwindCSS, ensuring a responsive design that adapts
 The application features a sticky navbar that remains fixed at the top of every page. It provides easy access to four main sections: Home, Champions, Items, and My Champions.
 
 ## Home Page
+![Home page Preview](https://github.com/weixu1220/lol-project/blob/main/src/images/Screenshot1.png)
 
 The home page includes a user-friendly form that requests the user's name. The provided name is stored in the local storage, and if it already exists, a personalized greeting is displayed.
 
 ## Champions and Items Pages
+![Champion page Preview](https://github.com/weixu1220/lol-project/blob/main/src/images/Screenshot2.png)
 
+![Item page Preview](https://github.com/weixu1220/lol-project/blob/main/src/images/Screenshot3.png)
 ### Fetching Data from APIs
+![Preview](https://github.com/weixu1220/lol-project/blob/main/src/images/Screenshot4.png)
 
 Data for champions and items are fetched separately from the Data Dragon API. The retrieved data is then stored and passed to components using useContext to be displayed on the champions and items pages.
 
