@@ -5,3 +5,7 @@
     height:80px;
     width:80px;
 }
+.map{
+    max-width: 1000px;
+    width:80vw
+}

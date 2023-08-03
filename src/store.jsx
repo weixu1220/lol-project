@@ -8,5 +8,5 @@ export const store = configureStore({
 })
 store.subscribe(() => {
   const state = store.getState();
-  localStorage.setItem('myChampsState', JSON.stringify(state.myChamps));
+  localStorage.setItem('myChampsState', JSON.stringify(state.champs));
 });
