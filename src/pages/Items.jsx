@@ -47,7 +47,7 @@ function Items() {
                     placeholder="Search items by name..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="mx-auto border-2 rounded-md p-2 mt-10"
+                    className="mx-auto border-2 rounded-md p-2 mt-10 dark:text-black"
                 />
                 <div className="w-11/12 flex flex-wrap justify-center mx-auto my-5 p-1 ">
                     {displayItems}

@@ -72,7 +72,7 @@ function Champions() {
         placeholder="Search champions..."
         value={searchTerm}
         onChange={handleSearchChange}
-        className="mx-auto border-2 rounded-md p-2 mt-10"
+        className="mx-auto border-2 rounded-md p-2 mt-10 dark:text-black"
       />
 
       {!champs ? loading() : loaded()}
