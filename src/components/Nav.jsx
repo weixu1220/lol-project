@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
 function Nav() {
-  
 
   return (
     <div className="flex flex-row flex-wrap justify-center font-bold p-1">
@@ -17,6 +15,9 @@ function Nav() {
       </Link>
       <Link className="p-5" to="/mychamps">
         <h1 className="hover:font-serif">My Champions</h1>
+      </Link>
+      <Link className="p-5" to="/comparechamps">
+        <h1 className="hover:font-serif">Compare Champions</h1>
       </Link>
     </div>
   );

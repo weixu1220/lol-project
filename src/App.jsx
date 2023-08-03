@@ -6,6 +6,7 @@ import Items from './pages/Items';
 import Item from './pages/Item';
 import Champ from './pages/Champ';
 import MyChamps from './pages/MyChamps';
+import CompareChamps from './pages/CompareChamps';
 import './App.css';
 import { useEffect, useState } from 'react';
 
@@ -116,6 +117,7 @@ function App() {
           <Route path="/items/" element={<Items />} />
           <Route path="/items/:itemID" element={<Item />} />
           <Route path="/mychamps" element={<MyChamps />} />
+          <Route path="/comparechamps" element={<CompareChamps/>}/>
         </Routes>
       </div>
     </div>
