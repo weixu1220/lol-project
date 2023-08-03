@@ -15,10 +15,10 @@ function CompareChamps() {
       champName.charAt(0).toUpperCase() + champName.slice(1).toLowerCase()
     );
     if (champs[champName]) {
-        setSuggestedNamesChamp1([]);
-      } else {
-        suggestChampionNames(champName, setSuggestedNamesChamp1);
-      }
+      setSuggestedNamesChamp1([]);
+    } else {
+      suggestChampionNames(champName, setSuggestedNamesChamp1);
+    }
   }
   function handleChamp2(e) {
     const champName = e.target.value;
@@ -26,10 +26,10 @@ function CompareChamps() {
       champName.charAt(0).toUpperCase() + champName.slice(1).toLowerCase()
     );
     if (champs[champName]) {
-        setSuggestedNamesChamp2([]);
-      } else {
-        suggestChampionNames(champName, setSuggestedNamesChamp2);
-      }
+      setSuggestedNamesChamp2([]);
+    } else {
+      suggestChampionNames(champName, setSuggestedNamesChamp2);
+    }
   }
   function suggestChampionNames(champName, setSuggestedNames) {
     const suggestions = Object.keys(champs).filter((name) =>
@@ -53,7 +53,7 @@ function CompareChamps() {
     if (champ && champs[champ]) {
       let imgUrl = `https://ddragon.leagueoflegends.com/cdn/13.14.1/img/champion/${champs[champ]["image"]["full"]}`;
       return (
-        <div className="w-4/12 mx-auto text-xl p-1 m-1">
+        <div className="w-[100%] mx-auto text-xl p-1 m-1">
           <h1 className="text-center text-3xl">{champs[champ].name}</h1>
           <img src={imgUrl} />
           <h2 className="border-2 p-2">Title: {champs[champ].title}</h2>
@@ -127,32 +127,36 @@ function CompareChamps() {
   }
   return (
     <div className="compare">
-      <p className="text-center m-5">
+      <p className="text-red-500 text-lg font-bold text-center m-5">
         Compare Champions page still in progress
       </p>
       <form
-        className="flex flex-col flex-wrap justify-center items-center p-1 m-1"
+        className="flex flex-col flex-wrap justify-center items-center p-5 m-5"
         action="submit"
         onSubmit={handleSubmit}
       >
-        <div className="w-full flex justify-center">
-          <div className="w-6/12 flex-col justify-center">
-            <label className="text-center p-2 m-1">
-              Champion 1 Name:
+        <div className=" w-full flex flex-wrap ">
+          <div className="w-6/12 flex-col flex-wrap ">
+            <div className="flex flex-wrap justify-center">
+              <label htmlFor="champ1" className="m-1 p-2">
+                Champion 1 Name:
+              </label>
               <input
+                id="champ1"
                 className="border-2 p-2 m-1"
                 type="text"
                 placeholder="Champion 1 Name"
                 value={champ1}
                 onChange={handleChamp1}
               />
-            </label>
+            </div>
             {suggestedNamesChamp1.length > 0 && (
-              <ul className="max-w-[90%] flex flex-wrap justify-center">
+              <ul className="max-w-[90%] flex flex-wrap justify-left m-1 p-1">
                 <p className="text-center p-2 m-1">Do you mean:</p>
+                <hr/>
                 {suggestedNamesChamp1.map((name) => (
                   <li
-                    className="m-1 p-2 bg-blue-900 text-amber-400 rounded-md"
+                    className="w-[115px] text-center m-1 p-2 bg-blue-900 text-amber-400 rounded-md"
                     key={name}
                     onClick={() => handleSuggestedClick(name, setChamp1)}
                   >
@@ -162,23 +166,27 @@ function CompareChamps() {
               </ul>
             )}
           </div>
-          <div className="w-6/12 flex-col justify-center">
-            <label className="text-center p-2 m-1">
-              Champion 2 Name:
+          <div className="w-6/12 flex-col flex-wrap justify-center items-center">
+            <div className="flex flex-wrap justify-center">
+              <label htmlFor="champ2" className="text-center p-2 m-1">
+                Champion 2 Name:
+              </label>
               <input
+                id="champ2"
                 className="border-2 p-2 m-1"
                 type="text"
                 placeholder="Champion 2 Name"
                 value={champ2}
                 onChange={handleChamp2}
               />
-            </label>
+            </div>
+
             {suggestedNamesChamp2.length > 0 && (
-              <ul className="max-w-[90%] flex flex-wrap justify-center">
+              <ul className="max-w-[90%] flex flex-wrap justify-left m-1 p-1">
                 <p className="text-center p-2 m-1">Do you mean:</p>
                 {suggestedNamesChamp2.map((name) => (
                   <li
-                    className="m-1 p-2 bg-blue-900 text-amber-400 rounded-md"
+                    className="w-[115px] m-1 p-2 bg-blue-900 text-amber-400 rounded-md text-center"
                     key={name}
                     onClick={() => handleSuggestedClick(name, setChamp2)}
                   >
@@ -198,9 +206,9 @@ function CompareChamps() {
         </button>
       </form>
       {submitted && (
-        <div className="flex">
-          {displayChamp(champ1)}
-          {displayChamp(champ2)}
+        <div className="flex flex-wrap justify-around">
+          <div className="w-[300px]">{displayChamp(champ1)}</div>
+          <div className="w-[300px]">{displayChamp(champ2)}</div>
         </div>
       )}
     </div>
