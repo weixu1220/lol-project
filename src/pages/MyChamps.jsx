@@ -29,7 +29,7 @@ function MyChamps() {
     }
     return(
         <div className="flex flex-col">
-            <button className="border-2 rounded-md text-amber-400 text-xl text-center p-3 m-1 mx-auto bg-blue-950" onClick={handleResetChamps}>Reset My Champs</button>
+            <button className="border-2 rounded-md text-amber-400 text-xl text-center p-3 mt-10 mx-auto bg-blue-950" onClick={handleResetChamps}>Reset My Champs</button>
             <div className="w-11/12 flex flex-wrap justify-center my-5 mx-auto p-1">
                 {displayItems}
             </div>

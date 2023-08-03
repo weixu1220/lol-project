@@ -1,11 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.image{
-    height:80px;
-    width:80px;
+
+.image {
+    height: 80px;
+    width: 80px;
 }
-.map{
+
+.map {
     max-width: 1000px;
-    width:80vw
+    width: 80vw
+}
+
+.light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.dark {
+    background-color: #020000;
+    color: #ffffff;
 }
