@@ -4,7 +4,11 @@ import { useChampsContext } from "../ChampsContext";
 
 function Items() { 
     const { items} = useChampsContext();
-    
+    const [searchTerm, setSearchTerm] = useState('');
+
+    useEffect(() => {
+    }, [searchTerm]);
+
     function loaded (){
         const itemIDs = Object.keys(items)
         const displayItems = []
@@ -12,6 +16,9 @@ function Items() {
         const onImageError = (e) => {
             e.target.src = placeholderUrl
           }
+          const filteredItems = itemIDs.filter((itemID) =>
+          items[itemID]['name'].toLowerCase().includes(searchTerm.toLowerCase())
+        );
             // Function to extract the text between two tags
         const extractTextBetweenTags = (text, tag) => {
             const startTag = `<${tag}>`;
@@ -21,7 +28,7 @@ function Items() {
             return text.substring(startIndex, endIndex);
         };
           
-        for (let itemID of itemIDs){
+        for (let itemID of filteredItems){
             let itemName = items[itemID]['name']
             let imgUrl = `https://ddragon.leagueoflegends.com/cdn/13.14.1/img/item/${items[itemID]['image']['full']}`
             displayItems.push(
@@ -34,9 +41,19 @@ function Items() {
             )
          }
         return(
-            <div className="w-11/12 flex flex-wrap justify-center mx-auto my-5 p-1 ">
-                {displayItems}
+            <div className="flex flex-col">
+                <input
+                    type="text"
+                    placeholder="Search items by name..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="mx-auto border-2 rounded-md p-2 mb-4"
+                />
+                <div className="w-11/12 flex flex-wrap justify-center mx-auto my-5 p-1 ">
+                    {displayItems}
+                </div>
             </div>
+            
         )
     }
 
