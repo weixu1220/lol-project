@@ -29,10 +29,15 @@ export const ChampsSlice = createSlice({
       // Update localStorage with the new state
       let myChampsState = JSON.stringify({ myChamps: state.myChamps })
       localStorage.setItem('champsState', myChampsState);
+    },
+    ResetChamps:(state) =>{
+      state.myChamps = [];
+      let myChampsState = JSON.stringify({ myChamps: [] })
+      localStorage.setItem('champsState', myChampsState);
     }
   },
 })
 
-export const { AddChamp } = ChampsSlice.actions
+export const { AddChamp,ResetChamps } = ChampsSlice.actions
 
 export default ChampsSlice.reducer

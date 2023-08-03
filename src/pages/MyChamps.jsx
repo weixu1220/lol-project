@@ -1,11 +1,16 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { ResetChamps } from '../ChampsSlice'
 
 function MyChamps() {
     const myChamps = useSelector(state => state.champs?.myChamps)
     const navigate = useNavigate()
     const displayItems = []
     let placeholderUrl = "https://ddragon.leagueoflegends.com/cdn/13.14.1/img/champion/Aatrox.png"
+    const dispatch = useDispatch();
+    const handleResetChamps = () => {
+    dispatch(ResetChamps());
+    };
     const onImageError = (e) => {
         e.target.src = placeholderUrl
         }
@@ -23,9 +28,13 @@ function MyChamps() {
         )
     }
     return(
-        <div className="w-11/12 flex flex-wrap justify-center my-5 mx-auto p-1">
-            {displayItems}
+        <div className="flex flex-col">
+            <button className="border-2 rounded-md text-amber-400 text-xl text-center p-3 m-1 mx-auto bg-blue-950" onClick={handleResetChamps}>Reset My Champs</button>
+            <div className="w-11/12 flex flex-wrap justify-center my-5 mx-auto p-1">
+                {displayItems}
+            </div>
         </div>
+        
     )
 }
 
