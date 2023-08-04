@@ -42,8 +42,8 @@ function App() {
   }
 
   return (
-    <div className={`w-full min-h-screen ${theme === 'dark' ? 'dark' : ''}`}>
-      <div className={`bg-${theme === 'dark' ? 'black' : 'blue-950'} text-amber-400 flex flex-wrap justify-evenly p-1 ${theme === 'dark' ? 'dark:bg-black' : ''}`}>
+    <div className={`w-full min-h-screen ${theme === 'dark' ? 'dark' : ''} `}>
+      <div className={`bg-${theme === 'dark' ? 'black' : 'blue-950'} text-amber-400 flex flex-wrap justify-evenly p-1 ${theme === 'dark' ? 'dark:bg-black' : ''} header`}>
         <div className='flex flex-col justify-center items-center mx-5'>
           {localStorage.getItem('username') && (
             <h2 className="w-auto text-amber-400 text-center p-1 m-1 mx-auto">
@@ -106,7 +106,7 @@ function App() {
           )}
         </div>
       </div>
-      <div className="w-full mx-auto text-blue-950 text-lg m-0 bg-white">
+      <div className="w-full mx-auto text-blue-950 text-lg m-0 bg-white navbar">
         <Nav />
       </div>
       <div className="w-full">

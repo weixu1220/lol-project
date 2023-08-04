@@ -2,6 +2,8 @@
 This project is deployed with Netlify.
 
 https://astounding-starlight-b3e2f5.netlify.app/
+## Tool used
+HTML, CSS, Javascript, React, redux
 ## Responsive CSS
 
 This project is built with TailwindCSS, ensuring a responsive design that adapts to various screen sizes and devices.

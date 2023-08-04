@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useChampsContext } from "../ChampsContext";
 import { useEffect, useState } from "react";
-import { current } from "@reduxjs/toolkit";
 
 function Item() {
   const itemID = useParams().itemID;

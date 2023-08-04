@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--bg-color); /* Replace with your desired background color */
+  }
+  .navbar {
+    position: sticky;
+    top: 80px; /* Adjust this value to your needs */
+    z-index: 100;
+    background-color: var(--bg-color); /* Replace with your desired background color */
+  }
+
 .image {
     height: 80px;
     width: 80px;
