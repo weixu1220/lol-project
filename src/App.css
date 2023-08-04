@@ -5,18 +5,12 @@
 .header {
   position: sticky;
   top: 0;
-  z-index: 100;
-  background-color: var(
-    --bg-color
-  ); /* Replace with your desired background color */
+  z-index: 100; 
 }
 .navbar {
   position: sticky;
-  top: 80px; /* Adjust this value to your needs */
-  z-index: 100;
-  background-color: var(
-    --bg-color
-  ); /* Replace with your desired background color */
+  top: 80px; 
+  z-index: 100; 
 }
 
 .image {
