@@ -53,9 +53,12 @@ function CompareChamps() {
     if (champ && champs[champ]) {
       let imgUrl = `https://ddragon.leagueoflegends.com/cdn/13.14.1/img/champion/${champs[champ]["image"]["full"]}`;
       return (
-        <div className="w-[100%] mx-auto text-xl p-1 m-1">
-          <h1 className="text-center text-3xl">{champs[champ].name}</h1>
-          <img src={imgUrl} />
+        <div className="w-[100%] text-xl p-1 m-1 mx-0">
+            <div className="flex flex-col justify-center items-center">
+                <h1 className="text-center text-3xl">{champs[champ].name}</h1>
+                <img className="w-[100px]" src={imgUrl} />
+            </div>
+          
           <h2 className="border-2 p-2">Title: {champs[champ].title}</h2>
           <p className="border-2 p-2">Version: {champs[champ].version}</p>
           <p className="border-2 p-2">Resource: {champs[champ].partype}</p>
@@ -143,7 +146,7 @@ function CompareChamps() {
               </label>
               <input
                 id="champ1"
-                className="border-2 p-2 m-1"
+                className="border-2 p-2 m-1 dark:text-black"
                 type="text"
                 placeholder="Champion 1 Name"
                 value={champ1}
@@ -173,7 +176,7 @@ function CompareChamps() {
               </label>
               <input
                 id="champ2"
-                className="border-2 p-2 m-1"
+                className="border-2 p-2 m-1 dark:text-black"
                 type="text"
                 placeholder="Champion 2 Name"
                 value={champ2}
@@ -206,9 +209,9 @@ function CompareChamps() {
         </button>
       </form>
       {submitted && (
-        <div className="flex flex-wrap justify-around">
-          <div className="w-[300px]">{displayChamp(champ1)}</div>
-          <div className="w-[300px]">{displayChamp(champ2)}</div>
+        <div className="flex flex-wrap justify-center">
+          <div className="w-[300px] mr-0">{displayChamp(champ1)}</div>
+          <div className="w-[300px] ml-0">{displayChamp(champ2)}</div>
         </div>
       )}
     </div>

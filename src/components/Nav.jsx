@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function Nav() {
-
   return (
     <div className="flex flex-row flex-wrap justify-center font-bold p-1">
       <Link className="p-5" to="/">
