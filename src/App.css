@@ -3,34 +3,38 @@
 @tailwind utilities;
 
 .header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background-color: var(--bg-color); /* Replace with your desired background color */
-  }
-  .navbar {
-    position: sticky;
-    top: 80px; /* Adjust this value to your needs */
-    z-index: 100;
-    background-color: var(--bg-color); /* Replace with your desired background color */
-  }
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(
+    --bg-color
+  ); /* Replace with your desired background color */
+}
+.navbar {
+  position: sticky;
+  top: 80px; /* Adjust this value to your needs */
+  z-index: 100;
+  background-color: var(
+    --bg-color
+  ); /* Replace with your desired background color */
+}
 
 .image {
-    height: 80px;
-    width: 80px;
+  height: 80px;
+  width: 80px;
 }
 
 .map {
-    max-width: 1000px;
-    width: 80vw
+  max-width: 1000px;
+  width: 80vw;
 }
 
 .light {
-    background-color: #ffffff;
-    color: #000000;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .dark {
-    background-color: #020000;
-    color: #ffffff;
+  background-color: #020000;
+  color: #ffffff;
 }
